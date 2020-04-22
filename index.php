@@ -4,39 +4,50 @@ require './Classes/Usuario.php';
 use Classes\Usuario;
 
 $usu = new Usuario();
+
 $usuarios = $usu->listar();
+?><!DOCTYPE html>
+<html lang="en">
 
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
     <head>
-        <title>Lista de Usuarios</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    </head>
-    <style>
-        body{
-            background-color: aqua;
 
-        }
-    </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Business Casual - Start Bootstrap Theme</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/business-casual.min.css" rel="stylesheet">
+
+    </head>
+
     <body>
-        <br>
-        <div class="container">
-            <div class="col-md-10">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
+
+        <h1 class="site-heading text-center text-white d-none d-lg-block">
+            <span class="site-heading-upper text-primary mb-3">Tabela De Usuarios</span>
+        </h1> 
+
+        <section class="page-section">
+            <div class="container">
+                <div class="bg-faded rounded p-5">      
+                    <table style="width:100%" border="3px">
+                         <tr>
                             <th scope="col">Codigo</th>
                             <th scope="col">Nome</th>
                             <th scope="col">E-mail</th>
                             <th scope="col">Login</th>
                             <th scope="col">Opção</th>
                         </tr>
-                    </thead>
-                    <tbody>      
+                        <tbody>      
 
                         <?php foreach ($usuarios as $index => $usuario) { ?>                    
                             <tr>
@@ -53,11 +64,20 @@ $usuarios = $usu->listar();
                         <?php } ?>
                     </tbody>
                 </table>
-                <a href="adicionar.php"><button>Novo Cadastro</button></a>
+                    <br>
+                <a href="adicionar.php"><button class="btn btn-primary">Novo Cadastro</button></a>   
             </div>
-        </div>
+                     
+                </div>
+            </div>
+        </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     </body>
+
 </html>
